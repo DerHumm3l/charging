@@ -38,6 +38,9 @@ dependencies:
   expo-linking:
     specifier: ~7.0.4
     version: 7.0.5(expo@52.0.37)(react-native@0.76.7)(react@18.3.1)
+  expo-location:
+    specifier: ~18.0.7
+    version: 18.0.7(expo@52.0.37)
   expo-navigation-bar:
     specifier: ~4.0.7
     version: 4.0.8(expo@52.0.37)(react-native@0.76.7)(react@18.3.1)
@@ -56,6 +59,9 @@ dependencies:
   lucide-react-native:
     specifier: ^0.378.0
     version: 0.378.0(react-native-svg@15.8.0)(react-native@0.76.7)(react@18.3.1)
+  nanoid:
+    specifier: ^5.1.2
+    version: 5.1.2
   nativewind:
     specifier: ^4.1.23
     version: 4.1.23(react-native-reanimated@3.16.7)(react-native-safe-area-context@4.12.0)(react-native-svg@15.8.0)(react-native@0.76.7)(react@18.3.1)(tailwindcss@3.3.5)
@@ -4529,6 +4535,14 @@ packages:
       - supports-color
     dev: false
 
+  /expo-location@18.0.7(expo@52.0.37):
+    resolution: {integrity: sha512-EPN5yTtDCH3EMiJpJFCWuD+vJkhVbl1j3tMYo3wkhGJN7xlvZf6naLXj8vYntdXSa5M40KjOgjaRiUUqf6+dXw==}
+    peerDependencies:
+      expo: '*'
+    dependencies:
+      expo: 52.0.37(@babel/core@7.26.9)(@babel/preset-env@7.26.9)(react-native@0.76.7)(react@18.3.1)
+    dev: false
+
   /expo-modules-autolinking@2.0.8:
     resolution: {integrity: sha512-DezgnEYFQYic8hKGhkbztBA3QUmSftjaNDIKNAtS2iGJmzCcNIkatjN2slFDSWjSTNo8gOvPQyMKfyHWFvLpOQ==}
     hasBin: true
@@ -6345,6 +6359,12 @@ packages:
   /nanoid@3.3.8:
     resolution: {integrity: sha512-WNLf5Sd8oZxOm+TzppcYk8gVOgP+l58xNy58D0nbUnOxOWRWvlcCV4kUF7ltmI6PsrLl/BgKEyS4mqsGChFN0w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
+    hasBin: true
+    dev: false
+
+  /nanoid@5.1.2:
+    resolution: {integrity: sha512-b+CiXQCNMUGe0Ri64S9SXFcP9hogjAJ2Rd6GdVxhPLRm7mhGaM7VgOvCAJ1ZshfHbqVDI3uqTI5C8/GaKuLI7g==}
+    engines: {node: ^18 || >=20}
     hasBin: true
     dev: false
 
