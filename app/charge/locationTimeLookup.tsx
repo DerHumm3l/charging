@@ -54,8 +54,8 @@ export default function Screen() {
       />
       <View className="flex-1 p-4">
         <Title.Root>
-          <Title.Main>Test Test</Title.Main>
-          <Title.Sub>This is a sub heading</Title.Sub>
+          <Title.Main>Wann und wo startet der Laden?</Title.Main>
+          <Title.Sub>So findet man das Laden später wieder.</Title.Sub>
         </Title.Root>
         <Text>AddressStatus: {String(status)}</Text>
         <Text>Address: {address}</Text>

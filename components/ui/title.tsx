@@ -22,7 +22,10 @@ const Main = ({ children, className, ...props }: TextProps) => {
     <Text
       role="heading"
       aria-level="1"
-      className={cn("font-bold text-3xl text-foreground", className)}
+      className={cn(
+        "font-bold text-2xl text-foreground text-center",
+        className
+      )}
       {...props}
     >
       {children}
@@ -35,7 +38,7 @@ const Sub = ({ children, className, ...props }: TextProps) => {
     <Text
       role="heading"
       aria-level="2"
-      className={cn("text-base text-muted-foreground", className)}
+      className={cn("text-base text-muted-foreground text-center", className)}
       {...props}
     >
       {children}

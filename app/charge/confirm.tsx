@@ -31,8 +31,8 @@ export default function Screen() {
       />
       <View className="flex-1 p-4">
         <Title.Root>
-          <Title.Main>Confirm</Title.Main>
-          <Title.Sub>This is a sub heading</Title.Sub>
+          <Title.Main>Stimmen die Eingaben?</Title.Main>
+          <Title.Sub>Die Eingaben können nochmal korrigiert werden.</Title.Sub>
         </Title.Root>
       </View>
       <View className="h-16 px-4 flex-row items-center justify-around">

@@ -31,8 +31,8 @@ export default function Screen() {
       />
       <View className="flex-1 p-4">
         <Title.Root>
-          <Title.Main>Car State</Title.Main>
-          <Title.Sub>This is a sub heading</Title.Sub>
+          <Title.Main>Wie ist der Zustand deines Autos?</Title.Main>
+          <Title.Sub>Trage die Details ein.</Title.Sub>
         </Title.Root>
       </View>
       <View className="h-16 px-4 flex-row items-center justify-around">
