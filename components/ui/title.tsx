@@ -9,7 +9,7 @@ type TextProps = SlottableTextProps;
 const Root = ({ children, className, ...props }: RootProps) => {
   return (
     <View
-      className={cn("w-full flex flex-col items-center", className)}
+      className={cn("w-full flex flex-col items-center gap-1", className)}
       {...props}
     >
       {children}
@@ -22,7 +22,7 @@ const Main = ({ children, className, ...props }: TextProps) => {
     <Text
       role="heading"
       aria-level="1"
-      className={cn("font-bold text-2xl text-foreground", className)}
+      className={cn("font-bold text-3xl text-foreground", className)}
       {...props}
     >
       {children}

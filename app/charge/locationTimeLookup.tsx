@@ -1,18 +1,16 @@
-import { useContext, useEffect, useState } from "react";
-import { View } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { Text } from "~/components/ui/text";
-import { ChargeContext } from "./_utils/ChargeContext";
-import { Button } from "~/components/ui/button";
-import { Link } from "expo-router";
-import FormStepProgressIndicator from "~/components/FormStepProgressIndicator";
-import Header from "~/components/ui/header";
 import * as Location from "expo-location";
+import { Link } from "expo-router";
+import { useEffect, useState } from "react";
+import { View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import FormStepProgressIndicator from "~/components/FormStepProgressIndicator";
+import { Button } from "~/components/ui/button";
+import Header from "~/components/ui/header";
+import { Text } from "~/components/ui/text";
 import Title from "~/components/ui/title";
 import { X } from "~/lib/icons/X";
 
 export default function Screen() {
-  const insets = useSafeAreaInsets();
   const [address, setAddress] = useState<string | undefined>(undefined);
   const [status, setStatus] = useState<boolean | undefined>(undefined);
 
@@ -43,7 +41,7 @@ export default function Screen() {
   }, []);
 
   return (
-    <View style={{ paddingTop: insets.top }}>
+    <SafeAreaView className="flex-1">
       <Header
         center={<FormStepProgressIndicator currentStep={1} totalSteps={3} />}
         right={
@@ -54,18 +52,21 @@ export default function Screen() {
           </Link>
         }
       />
-      <Title.Root>
-        <Title.Main>Test Test</Title.Main>
-        <Title.Sub>This is a sub heading</Title.Sub>
-      </Title.Root>
-
-      <Text>AddressStatus: {String(status)}</Text>
-      <Text>Address: {address}</Text>
-      <Link href="/charge/carStateLookup" asChild>
-        <Button variant={"default"} className="">
-          <Text>Vor</Text>
-        </Button>
-      </Link>
-    </View>
+      <View className="flex-1 p-4">
+        <Title.Root>
+          <Title.Main>Test Test</Title.Main>
+          <Title.Sub>This is a sub heading</Title.Sub>
+        </Title.Root>
+        <Text>AddressStatus: {String(status)}</Text>
+        <Text>Address: {address}</Text>
+      </View>
+      <View className="h-16 px-4 flex-row items-center justify-around">
+        <Link href="/charge/carStateLookup" asChild>
+          <Button variant={"default"} className="w-full">
+            <Text>Weiter</Text>
+          </Button>
+        </Link>
+      </View>
+    </SafeAreaView>
   );
 }
