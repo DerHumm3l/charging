@@ -9,6 +9,7 @@ import FormStepProgressIndicator from "~/components/FormStepProgressIndicator";
 import Header from "~/components/ui/header";
 import * as Location from "expo-location";
 import Title from "~/components/ui/title";
+import { X } from "~/lib/icons/X";
 
 export default function Screen() {
   const insets = useSafeAreaInsets();
@@ -43,11 +44,16 @@ export default function Screen() {
 
   return (
     <View style={{ paddingTop: insets.top }}>
-      <Header.Root>
-        <Header.Center>
-          <FormStepProgressIndicator currentStep={1} totalSteps={3} />
-        </Header.Center>
-      </Header.Root>
+      <Header
+        center={<FormStepProgressIndicator currentStep={1} totalSteps={3} />}
+        right={
+          <Link href="/" asChild>
+            <Button variant={"ghost"}>
+              <X className="text-foreground" />
+            </Button>
+          </Link>
+        }
+      />
       <Title.Root>
         <Title.Main>Test Test</Title.Main>
         <Title.Sub>This is a sub heading</Title.Sub>
@@ -56,7 +62,7 @@ export default function Screen() {
       <Text>AddressStatus: {String(status)}</Text>
       <Text>Address: {address}</Text>
       <Link href="/charge/carStateLookup" asChild>
-        <Button>
+        <Button variant={"default"} className="">
           <Text>Vor</Text>
         </Button>
       </Link>

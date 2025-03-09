@@ -1,33 +1,36 @@
-import { View, ViewProps } from "react-native";
+import { ReactNode } from "react";
+import { View } from "react-native";
 import { cn } from "~/lib/utils";
 
-type HeaderProps = ViewProps;
+interface HeaderProps {
+  left?: ReactNode;
+  center?: ReactNode;
+  right?: ReactNode;
+  className?: string;
+}
 
-function Root({ children, className, ...props }: HeaderProps) {
+const Header: React.FC<HeaderProps> = ({
+  left,
+  center,
+  right,
+  className = "",
+}) => {
   return (
     <View
       role="navigation"
-      className={cn(
-        "w-full grid grid-cols-header gap-1 grid-rows-1 items-center justify-center content-center align-middle",
-        className
-      )}
-      {...props}
+      className={cn("relative flex-row items-center px-4 py-3", className)}
     >
-      {children}
+      <View className="z-10 flex-row items-center justify-start">
+        {left || <View className="w-10" />}
+      </View>
+      <View className="absolute left-0 right-0 items-center justify-center">
+        {center}
+      </View>
+      <View className="z-10 flex-row items-center justify-end ml-auto">
+        {right || <View className="w-10" />}
+      </View>
     </View>
   );
-}
+};
 
-function Left(props: HeaderProps) {
-  return <View className="col-start-1 justify-self-start" {...props}></View>;
-}
-
-function Center(props: HeaderProps) {
-  return <View className="col-start-2 justify-self-center" {...props}></View>;
-}
-
-function Right(props: HeaderProps) {
-  return <View className="col-start-3 justify-self-end" {...props}></View>;
-}
-
-export default { Root, Left, Center, Right };
+export default Header;

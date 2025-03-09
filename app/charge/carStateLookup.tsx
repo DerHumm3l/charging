@@ -7,29 +7,43 @@ import { Button } from "~/components/ui/button";
 import { Link } from "expo-router";
 import Header from "~/components/ui/header";
 import FormStepProgressIndicator from "~/components/FormStepProgressIndicator";
+import { X } from "~/lib/icons/X";
+import { ArrowLeft } from "~/lib/icons/ArrowLeft";
 
 export default function Screen() {
   const insets = useSafeAreaInsets();
   const context = useContext(ChargeContext);
 
   return (
-    <View style={{ paddingTop: insets.top }}>
-      <Header.Root>
-        <Header.Center>
-          <FormStepProgressIndicator currentStep={2} totalSteps={3} />
-        </Header.Center>
-      </Header.Root>
-      <Text>Car State</Text>
-      <Link href="/charge/locationTimeLookup" asChild>
-        <Button>
-          <Text>Zurück</Text>
-        </Button>
-      </Link>
-      <Link href="/charge/confirm" asChild>
-        <Button>
-          <Text>Vor</Text>
-        </Button>
-      </Link>
+    <View className="h-screen flex flex-col" style={{ paddingTop: insets.top }}>
+      <Header
+        left={
+          <Link href="/charge/locationTimeLookup" asChild>
+            <Button variant={"ghost"}>
+              <ArrowLeft className="text-foreground" />
+            </Button>
+          </Link>
+        }
+        center={<FormStepProgressIndicator currentStep={2} totalSteps={3} />}
+        right={
+          <Link href="/" asChild>
+            <Button variant={"ghost"}>
+              <X className="text-foreground" />
+            </Button>
+          </Link>
+        }
+        className="grow-0"
+      />
+      <View className="grow">
+        <Text>Car State</Text>
+      </View>
+      <View className="grow-0">
+        <Link href="/charge/confirm" asChild>
+          <Button>
+            <Text>Vor</Text>
+          </Button>
+        </Link>
+      </View>
     </View>
   );
 }

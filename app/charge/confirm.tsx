@@ -7,24 +7,32 @@ import { Button } from "~/components/ui/button";
 import { Link } from "expo-router";
 import Header from "~/components/ui/header";
 import FormStepProgressIndicator from "~/components/FormStepProgressIndicator";
+import { X } from "~/lib/icons/X";
+import { ArrowLeft } from "~/lib/icons/ArrowLeft";
 
 export default function Screen() {
   const insets = useSafeAreaInsets();
 
   return (
     <View style={{ paddingTop: insets.top }}>
-      <Header.Root>
-        <Header.Center>
-          <FormStepProgressIndicator currentStep={3} totalSteps={3} />
-        </Header.Center>
-      </Header.Root>
-
+      <Header
+        left={
+          <Link href="/charge/carStateLookup" asChild>
+            <Button variant={"ghost"}>
+              <ArrowLeft className="text-foreground" />
+            </Button>
+          </Link>
+        }
+        center={<FormStepProgressIndicator currentStep={3} totalSteps={3} />}
+        right={
+          <Link href="/" asChild>
+            <Button variant={"ghost"}>
+              <X className="text-foreground" />
+            </Button>
+          </Link>
+        }
+      />
       <Text>Confirm</Text>
-      <Link href="/charge/carStateLookup" asChild>
-        <Button>
-          <Text>Zurück</Text>
-        </Button>
-      </Link>
     </View>
   );
 }

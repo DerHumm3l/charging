@@ -12,7 +12,7 @@ export default function FormStepProgressIndicator({
 }: Props) {
   return (
     <View>
-      <Text>{`Schritt ${currentStep} von ${totalSteps}`}</Text>
+      <Text className="text-sm text-muted-foreground font-semibold">{`Schritt ${currentStep} von ${totalSteps}`}</Text>
     </View>
   );
 }
