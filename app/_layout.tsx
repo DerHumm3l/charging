@@ -14,6 +14,8 @@ import { NAV_THEME } from "~/lib/constants";
 import { useColorScheme } from "~/lib/useColorScheme";
 import { PortalHost } from "@rn-primitives/portal";
 import { Text } from "~/components/ui/text";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 
 const LIGHT_THEME: Theme = {
   ...DefaultTheme,
@@ -49,20 +51,27 @@ export default function RootLayout() {
 
   return (
     <ThemeProvider value={isDarkColorScheme ? DARK_THEME : LIGHT_THEME}>
-      <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
-      <Stack
-        screenOptions={{ animation: "fade_from_bottom", headerShown: false }}
-      >
-        <Stack.Screen name="index" />
-        <Stack.Screen name="charge" />
-        <Stack.Screen
-          name="modal"
-          options={{
-            presentation: "transparentModal",
-          }}
-        />
-      </Stack>
-      <PortalHost />
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <BottomSheetModalProvider>
+          <StatusBar style={isDarkColorScheme ? "light" : "dark"} />
+          <Stack
+            screenOptions={{
+              animation: "fade_from_bottom",
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="index" />
+            <Stack.Screen name="charge" />
+            <Stack.Screen
+              name="modal"
+              options={{
+                presentation: "transparentModal",
+              }}
+            />
+          </Stack>
+          <PortalHost />
+        </BottomSheetModalProvider>
+      </GestureHandlerRootView>
     </ThemeProvider>
   );
 }
