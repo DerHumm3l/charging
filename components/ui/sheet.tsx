@@ -3,9 +3,7 @@ import {
   BottomSheetBackdropProps,
   BottomSheetModal,
 } from "@gorhom/bottom-sheet";
-import { remapProps } from "nativewind";
 import { forwardRef, useCallback, useRef } from "react";
-import { useColorScheme } from "~/lib/useColorScheme";
 
 const Sheet = forwardRef<
   BottomSheetModal,
@@ -15,10 +13,6 @@ const Sheet = forwardRef<
     { index = 0, backgroundStyle, style, handleIndicatorStyle, ...props },
     ref
   ) => {
-    // CTRL-Z
-
-    const { themeColors } = useColorScheme();
-
     const renderBackdrop = useCallback(
       (props: BottomSheetBackdropProps) => (
         <BottomSheetBackdrop {...props} disappearsOnIndex={-1} />

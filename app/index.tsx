@@ -1,14 +1,5 @@
-import {
-  BottomSheetModal,
-  BottomSheetModalProvider,
-  BottomSheetView,
-} from "@gorhom/bottom-sheet";
-import { useRef, useCallback, useEffect } from "react";
-import { View } from "react-native";
-import {
-  SafeAreaView,
-  useSafeAreaInsets,
-} from "react-native-safe-area-context";
+import { BottomSheetView } from "@gorhom/bottom-sheet";
+import { SafeAreaView } from "react-native-safe-area-context";
 import ChargeButton from "~/components/ChargeButton";
 import { Button } from "~/components/ui/button";
 import { Sheet, useSheetRef } from "~/components/ui/sheet";
@@ -33,7 +24,7 @@ export default function Screen() {
         snapPoints={["80%"]}
         enableDynamicSizing={false}
       >
-        <BottomSheetView style={{ backgroundColor: "##1c1c1c" }}>
+        <BottomSheetView>
           <Text>Hi mom </Text>
           <Button>
             <Text>Nice</Text>
