@@ -1,21 +1,20 @@
 import "~/global.css";
 
+import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 import {
   DarkTheme,
   DefaultTheme,
   Theme,
   ThemeProvider,
 } from "@react-navigation/native";
+import { PortalHost } from "@rn-primitives/portal";
 import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
-import { Platform, View } from "react-native";
+import { Platform } from "react-native";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { NAV_THEME } from "~/lib/constants";
 import { useColorScheme } from "~/lib/useColorScheme";
-import { PortalHost } from "@rn-primitives/portal";
-import { Text } from "~/components/ui/text";
-import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { BottomSheetModalProvider } from "@gorhom/bottom-sheet";
 
 const LIGHT_THEME: Theme = {
   ...DefaultTheme,

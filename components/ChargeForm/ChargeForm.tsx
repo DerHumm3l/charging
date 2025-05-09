@@ -32,7 +32,7 @@ const createCharge = (
     car: {
       capacity: batteryCapacity,
     },
-    location: formData.location,
+    address: formData.location,
     mileage: formData.mileage,
   };
 };
