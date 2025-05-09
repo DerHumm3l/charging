@@ -101,7 +101,7 @@ export default function Screen() {
               address,
             });
 
-            router.push("/");
+            router.dismissTo("/");
           }}
         >
           <Text>Laden starten</Text>
