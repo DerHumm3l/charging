@@ -42,7 +42,7 @@ export default function Screen() {
         />
       </View>
       <View className="h-16 px-4 flex-row items-center justify-around">
-        <Link href="/charge/step2" asChild>
+        <Link href="/start-charge/step2" asChild>
           <Button
             disabled={!formData.mileage}
             variant={"default"}

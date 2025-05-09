@@ -49,7 +49,7 @@ export default function Screen() {
     <SafeAreaView className="flex-1">
       <Header
         left={
-          <Link href="/charge/step1" asChild>
+          <Link href="/start-charge/step1" asChild>
             <Button variant={"ghost"}>
               <ArrowLeft className="text-foreground" />
             </Button>

@@ -19,7 +19,10 @@ export default function ChargeButton() {
 
   return (
     <View className="flex gap-1">
-      <Link href={currentlyCharging ? "/finish-charge" : "/charge"} asChild>
+      <Link
+        href={currentlyCharging ? "/finish-charge" : "/start-charge"}
+        asChild
+      >
         <Button variant="outline" size={"main"} className="flex flex-row gap-3">
           {icon}
           <Text>{currentlyCharging ? "Laden beenden" : "Laden"}</Text>
